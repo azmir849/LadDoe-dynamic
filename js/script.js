@@ -133,6 +133,11 @@ interestRender = (interest) => {
 testimonialRender = (testimonial) => {
     let htmlText = "";
     testimonial.map((testimonialData) => {
+        const str = testimonialData.feedback;
+
+        // 👇️ First 28 words
+        const shortFeedback = str.split(' ').slice(0, 28).join(' ');
+       // console.log(shortFeedback); 
         htmlText += `
                                       <div class="col-lg-1">
                                           <div class="queto">
@@ -141,7 +146,7 @@ testimonialRender = (testimonial) => {
                                       </div>
                                       <div class="col-lg-8">
                                           <p>${testimonialData.feedback}</p>
-                                          <p>${testimonialData.feedback_title}</p>
+                                          <p>${shortFeedback} ...</p>
                                       </div>
                                       <div class="col-lg-3">
                                           <div class="testimonial_img">
@@ -149,16 +154,6 @@ testimonialRender = (testimonial) => {
                                           </div>
                                           <div class="img_text">
                                               <h3>${testimonialData.client_name}</h3>
-                                              <p>Co-founder, Colabrio</p>
-                                              <div class="icons">
-                                                  <ul>
-                                                      <li><i class="fa-solid fa-star"></i></li>
-                                                      <li><i class="fa-solid fa-star"></i></li>
-                                                      <li><i class="fa-solid fa-star"></i></li>
-                                                      <li><i class="fa-solid fa-star"></i></li>
-                                                      <li><i class="fa-solid fa-star"></i></li>
-                                                  </ul>
-                                              </div>
                                           </div>
                                       </div>
                                   </div>
@@ -192,24 +187,47 @@ serviceRender = (services) => {
 blogRender = (blogs) => {
     let htmlText = "";
     blogs.Technology.map((techblog) => {
-        htmlText += `
+        var options = { day: 'numeric',month: 'long', year: 'numeric'};
+        var date  = new Date(techblog.created_date);
+        if(techblog.image==null){
+                    htmlText += `
       <div class="col-md-6 col-lg-4">
       <div class="journal_item">
           <div class="journal_img">
-              <img src="Images/journal1.png" alt="">
+          <img src="Images/journal1.png" alt="">
           </div>
           <div class="journal_content">
               <h5><span><i class="fa-solid fa-user"></i></span> Admin</h5>
               <h5><i class="fa-solid fa-calendar-days"></i></h5>
-              <h5> 15 March 2022</h5>
+              <h5>${date.toLocaleDateString("en-US", options)}</h5>
           </div>
       </div>
       <div class="journal_text text-center">
           <h4>${techblog.title}</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo is The repudiandae. </p>
+          <p>${techblog.description}</p>
       </div>
   </div>
       `;
+        }else {
+            htmlText += `
+            <div class="col-md-6 col-lg-4">
+            <div class="journal_item">
+                <div class="journal_img">
+                <img src="${base_url}/${techblog.image}" alt="">
+                </div>
+                <div class="journal_content">
+                    <h5><span><i class="fa-solid fa-user"></i></span> Admin</h5>
+                    <h5><i class="fa-solid fa-calendar-days"></i></h5>
+                    <h5>${date.toLocaleDateString("en-US", options)}</h5>
+                </div>
+            </div>
+            <div class="journal_text text-center">
+                <h4>${techblog.title}</h4>
+                <p>${techblog.description}</p>
+            </div>
+        </div>
+            `;
+        }
     });
     document.getElementById("blogs").innerHTML = htmlText;
 };
