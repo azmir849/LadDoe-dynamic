@@ -135,8 +135,8 @@ testimonialRender = (testimonial) => {
     testimonial.map((testimonialData) => {
         const str = testimonialData.feedback;
 
-        // 👇️ First 28 words
-        const shortFeedback = str.split(' ').slice(0, 28).join(' ');
+        // 👇️ First 25 words
+        const shortFeedback = str.split(' ').slice(0, 25).join(' ');
        // console.log(shortFeedback); 
         htmlText += `
                                       <div class="col-lg-1">
@@ -146,7 +146,7 @@ testimonialRender = (testimonial) => {
                                       </div>
                                       <div class="col-lg-8">
                                           <p>${testimonialData.feedback}</p>
-                                          <p>${shortFeedback} ...</p>
+                                          <p>${shortFeedback}... <strong>MORE</strong></p>
                                       </div>
                                       <div class="col-lg-3">
                                           <div class="testimonial_img">
@@ -359,6 +359,26 @@ awardRender = (awards) => {
     document.getElementById("awards").innerHTML = htmlText;
 };
 
+//function to set portfolio
+portfolioRender = (portfolios) => {
+    let htmlText = "";
+    portfolios[0].map((portfolioData)=>{
+        htmlText += `
+        <div class="col-lg-12">
+        <div class="portfolio_btn text-center" >
+            <ul >
+                <li data-filter="all"> All </li>
+                <li data-filter=".category-a"> ${portfolioData.cat_name}</li>
+                <li data-filter=".category-b"> Graphic Design </li>
+                <li data-filter=".category-c"> Web development </li>
+            </ul>
+        </div>
+    </div>
+        `
+    });
+    document.getElementById("portfolioCategory").innerHTML = htmlText;
+};
+
 //function to set the whole ui
 render = (data) => {
     aboutRender(data.about);
@@ -371,6 +391,7 @@ render = (data) => {
     serviceRender(data.services);
     blogRender(data.blogs);
     awardRender(data.awards);
+    portfolioRender(data.portfolios);
 };
 
 //Fetch api
