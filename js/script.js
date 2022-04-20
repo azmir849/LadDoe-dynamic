@@ -162,6 +162,111 @@ testimonialRender = (testimonial) => {
     document.getElementById("testimonials").innerHTML = htmlText;
 };
 
+//function to set Skills
+skillRender = (skills) =>{
+    let htmlText ="";
+    skills.map((skills) => {
+        if(skills.skill_level == "Advanced"){
+            htmlText +=`
+            <div class="progress_wrapeer">
+            <h6>${skills.name}</h6>
+            <a href="#">95%</a>
+        </div>
+        <div class="progress">
+        <div class="progress-value value_2"></div>
+        </div>
+            `
+        }
+        if(skills.skill_level == "Intermediate"){
+            htmlText +=`
+            <div class="progress_wrapeer">
+            <h6>${skills.name}</h6>
+            <a href="#" class="counter">90%</a>
+        </div>
+        <div class="progress">
+            <div class="progress-value"></div>
+        </div>
+            `
+        }
+        if(skills.skill_level == "Beginner"){
+            htmlText +=`
+            <div class="progress_wrapeer">
+                <h6>${skills.name}</h6>
+                    <a href="#">80%</a>
+                </div>
+                <div class="progress">
+                  <div class="progress-value value_4"></div>
+                </div>
+            `
+        }
+    });
+    document.getElementById("skillDiv").innerHTML = htmlText;
+};
+
+
+//function to set languages
+languageRender = (languages) =>{
+    let htmlText = "";
+    languages.map((languages) => {
+        if(languages.level == "Advanced"){
+            htmlText += `
+            <div class="col-lg-1"></div>
+            <div class="col-6 col-md-6 col-lg-2" >
+                <div class="circle">
+                    <div class="text">
+                        100%
+                    </div>
+                    <svg>
+                    <circle class="bg" cx="57" cy="57" r="52"></circle>
+                    <circle class="progress Bangla" cx="57" cy="57" r="52"></circle>
+                </svg>
+                </div>
+                <div class="cercle_title text-center">
+                    <h4>${languages.title}</h4>
+                </div>
+            </div>`
+        }
+        if(languages.level == "Intermediate"){
+            htmlText += `
+            <div class="col-lg-1"></div>
+            <div class="col-6 col-md-4 col-lg-2">
+                        <div class="circle">
+                            <div class="text">
+                                80%
+                            </div>
+                            <svg>
+                            <circle class="bg" cx="57" cy="57" r="52"></circle>
+                            <circle class="progress intermediate" cx="57" cy="57" r="52"></circle>
+                        </svg>
+                        </div>
+                        <div class="cercle_title text-center">
+                            <h4>${languages.title}</h4>
+                        </div>
+            </div>`
+        }
+        if(languages.level == "Beginner"){
+            htmlText += `
+            <div class="col-lg-1"></div>
+            <div class="col-6 col-md-4 col-lg-2">
+                        <div class="circle">
+                            <div class="text">
+                                30%
+                            </div>
+                            <svg>
+                            <circle class="bg" cx="57" cy="57" r="52"></circle>
+                            <circle class="progress beginer" cx="57" cy="57" r="52"></circle>
+                        </svg>
+                        </div>
+                        <div class="cercle_title text-center">
+                            <h4>${languages.title}</h4>
+                        </div>
+            </div>`
+        }
+        
+    });
+    document.getElementById("languageDiv").innerHTML = htmlText;
+};
+
 //function to set services
 serviceRender = (services) => {
     let htmlText = "";
@@ -261,6 +366,8 @@ render = (data) => {
     workExperienceRender(data.experiences);
     interestRender(data.interests);
     testimonialRender(data.testimonials);
+    skillRender(data.subskills);
+    languageRender(data.languages);
     serviceRender(data.services);
     blogRender(data.blogs);
     awardRender(data.awards);
