@@ -26,7 +26,7 @@ $(document).ready(function(){
   $('.venobox').venobox(); 
 });
 // mixit up
-var mixer = mixitup('.portfolio_content');
+
 // slider
 $('.testimonial_slider').slick({
   infinite: true,
