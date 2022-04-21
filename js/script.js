@@ -156,7 +156,7 @@ testimonialRender = (testimonial) => {
                                               <h3>${testimonialData.client_name}</h3>
                                           </div>
                                       </div>
-                                  </div>
+                                  
     `;
   });
   document.getElementById("testimonials").innerHTML = htmlText;
