@@ -716,7 +716,6 @@ p {
   font-size: 16px;
   font-weight: 400;
   color: #333333;
-  padding: 26px 0;
   line-height: 24px;
 }
 
@@ -768,6 +767,32 @@ p {
   -moz-transition: all linear .5s;
   -ms-transition: all linear .5s;
   -o-transition: all linear .5s;
+}
+.aboutBatchImage img{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.microBatchCard {
+  border: 5px solid rgba(255, 191, 0, 0.748);
+  border-radius: 0.5rem
+}
+.microCardFooter h5{
+  color: rgba(241, 184, 13, 0.989) !important;
+}
+.microCardFooter p{
+  font-style: italic;
+  font-weight: bold;
+}
+
+.microBatchImg {
+  height: 100% !important;
+}
+
+.microBatchImg img {
+  border-width: 10px !important;
+  height: 100% !important;
+  width: 100% !important;
 }
 
 /* *****************Interests section start*************** */
@@ -1255,6 +1280,14 @@ p {
 .service {
   padding: 130px 0;
   background-color: #fff3fc;
+}
+.serviceImg {
+  height: 100% !important;
+}
+
+.serviceImg img {
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .service .service_head h4 {
