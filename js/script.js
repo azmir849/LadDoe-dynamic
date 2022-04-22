@@ -1,6 +1,8 @@
 //function to set about
 var base_url = "https://icircles.app/";
+let username = "";
 aboutRender = (about) => {
+  username = about.username;
   document.getElementById(
     "user_name"
   ).innerHTML = `${about.firstname} <span id="last_name">${about.lastname}!</span>`;
@@ -64,9 +66,27 @@ aboutRender = (about) => {
   document.getElementById("user_details").innerHTML = details;
 
   document.getElementById("thumb").src = base_url + about.thumb;
+  document.getElementById("contactImage").src = base_url + about.thumb;
+  document.getElementById("skillImageThumb").src = base_url + about.thumb;
+  document.getElementById("ResumeUrl").href = base_url + about.resume;
   document.getElementById("footer").innerHTML = `
     <span>© 2022, ${about.firstname} ${about.lastname}. All Rights Reserved.</span>
     `;
+
+    document.getElementById("headerLeft").innerHTML = `<h2 class="bold">${about.firstname} <span>${about.lastname}</span></h2>`;
+    document.getElementById("rightCanvasToggle").innerHTML = `<h2>${about.firstname} <span>${about.lastname}</span></h2>`;
+    document.getElementById("headVideoThumb").innerHTML = `<img  src="${base_url + about.image}" alt="">`;
+};
+
+//function to set portfolio video
+profileVideoRender = (portfolioVideo) =>{
+  let htmlText = "";
+  portfolioVideo.map((videoData)=>{
+      htmlText += `
+      <a class="venobox" data-autoplay="true" data-vbtype="video" href="${videoData.video}"> <i class="fas fa-play-circle"></i></a>
+      `
+  });
+  document.getElementById("headerVideo").innerHTML = htmlText;
 };
 
 // function to set user educations information
@@ -300,7 +320,6 @@ blogRender = (blogs) => {
           <img src="Images/journal1.png" alt="">
           </div>
           <div class="journal_content">
-              <h5><span><i class="fa-solid fa-user"></i></span> Admin</h5>
               <h5><i class="fa-solid fa-calendar-days"></i></h5>
               <h5>${date.toLocaleDateString("en-US", options)}</h5>
           </div>
@@ -319,7 +338,6 @@ blogRender = (blogs) => {
                 <img src="${base_url}/${techblog.image}" alt="">
                 </div>
                 <div class="journal_content">
-                    <h5><span><i class="fa-solid fa-user"></i></span> Admin</h5>
                     <h5><i class="fa-solid fa-calendar-days"></i></h5>
                     <h5>${date.toLocaleDateString("en-US", options)}</h5>
                 </div>
@@ -333,6 +351,7 @@ blogRender = (blogs) => {
     }
   });
   document.getElementById("blogs").innerHTML = htmlText;
+  
 };
 
 //function to set awards
@@ -421,6 +440,44 @@ portfolioRender = (portfolios) => {
   mixitup(".portfolio_content");
 };
 
+//function to set microsites
+micrositesRender = (microsites) => {
+  let htmlText = "";
+  microsites.map((micrositesData) => {
+    htmlText += ` <div class="col-md-6 col-lg-6">
+        <div class="microsite_item">
+            <div class="row d-flex align-items-center">
+                <div class="col-md-2 serviceImg">
+                    <img src="https://icircles.app/uploads/micrositeslogo/${micrositesData.entity_logo}" alt="">
+                </div>
+                <div class="col-md-10">
+                  
+                    <a target="_blank" href="https://icircles.app/microsites/single/${micrositesData.id}"><h3>${micrositesData.name}</h3></a>
+                    <p>${micrositesData.entity_details}</p>
+                </div>
+            </div>
+        </div>
+    </div> `;
+  });
+  document.getElementById("microsites").innerHTML = htmlText;
+};
+
+//function to set profile photos
+myphotosRender = (profile_images) => {
+  let htmlText = "";
+  profile_images.map((portfolioData)=>{
+      htmlText += `
+      <div class="col mb-3">
+      <div class="interest-card interest-cardh-50 shadow-sm"> 
+        <img src="https://icircles.app/uploads/user/${username}/${portfolioData.image}" class="card-img-top" alt="...">
+      </div>
+  </div>
+      `
+  });
+  document.getElementById("myPhotos").innerHTML = htmlText;
+};
+
+
 //function to set the whole ui
 render = (data) => {
   aboutRender(data.about);
@@ -434,6 +491,9 @@ render = (data) => {
   blogRender(data.blogs);
   awardRender(data.awards);
   portfolioRender(data.portfolios);
+  profileVideoRender(data.profile_video);
+  micrositesRender(data.microsites);
+  myphotosRender(data.profile_images);
 };
 
 //Fetch api

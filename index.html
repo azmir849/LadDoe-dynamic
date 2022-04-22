@@ -41,9 +41,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="header_wrapper">
-                            <div class="header_left">
-                                <img src="images/logo.png" alt="">
+                            <div class="header_left" id="headerLeft">
+                              
                             </div>
+                          
                             <div class="header_right">
                                 <a href="#">Menu</a>
                                 <span><i data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="fa-solid fa-bars"></i></span>
@@ -60,7 +61,9 @@
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
             <h5 id="offcanvasRightLabel">
-                <img src="images/logo.png" alt="">
+               <diV class="rightCanvasToggle" id="rightCanvasToggle">
+
+               </diV>
             </h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
@@ -208,17 +211,17 @@
                                 <p id="about_me"></p>
 
                                 <div class="banner_button">
-                                    <a href="#">About Me</a>
-                                    <a href="#">Get A Quote</a>
+                                    <a href="#about">About Me</a>
+                                    <a href="#contact">Get A Quote</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6">
                             <div class="banner_thumb ">
-                                <div class="home_img wow slideInRight" data-wow-duration="1.5s" data-wow-delay=".1s">
-                                    <img src="images/homee.png" alt="">
+                                <div class="home_img wow slideInRight" id="headVideoThumb" data-wow-duration="1.5s" data-wow-delay=".1s">
+                                    <img  src="images/homee.png" alt="">
                                 </div>
-                                <div class="play">
+                                <div class="play" id="headerVideo">
                                     <a class="venobox" data-autoplay="true" data-vbtype="video" href="https://youtu.be/HOcrE_ztEq0"> <i class="fas fa-play-circle"></i></a>
                                 </div>
                             </div>
@@ -253,7 +256,8 @@
                                 <p id="aboutDescription"></p>
                                 <ul id="user_details">
                                 </ul>
-                                <a href="#">Download Resume</a>
+                                <a id="ResumeUrl" href="#">Download Resume</a>
+                                <img id="thumb" src="./images/iCircleBatch.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -262,6 +266,69 @@
         </div>
     </section>
     <!--          About Part End
+     *****************************************-->
+      <!--          My photos  Part Start
+     *****************************************-->
+     <!-- *****************Interest section start****************** -->
+<div class="interest-container">
+    <div class="container pt-5">
+    <div class="mt-5">
+      <h4 class="text-center">My Photos</h4>
+      <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+        <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3"  id="myPhotos">
+            <div class="col">
+                <div class="interest-card interest-cardh-50 shadow-sm"> 
+                  <img src="./images/contact.png" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col">
+                <div class="interest-card interest-cardh-50 shadow-sm"> 
+                  <img src="./images/contact.png" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col">
+                <div class="interest-card interest-cardh-50 shadow-sm"> 
+                  <img src="./images/contact.png" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col">
+                <div class="interest-card interest-cardh-50 shadow-sm"> 
+                  <img src="./images/contact.png" class="card-img-top" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    </div>
+  </div>
+  <!-- *****************Interest section end****************** -->
+   
+    <!--          My photos  Part End
+     *****************************************-->
+
+      <!--          Microsite Part Start
+     *****************************************-->
+    <section>
+        <div class="microsite" id="microsite">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="microsite_head text-center">
+                            <h4>My Microsites</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="microsite_wrapper">
+                    <div class="row" id="microsites">
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--          Microsite Part End
      *****************************************-->
 
     <!--          Resume Part Start
@@ -439,7 +506,7 @@
                                         <div></div>
                                         <div></div>
                                     </div>
-                                    <img src="images/skill.png" alt="">
+                                        <img id="skillImageThumb" src="images/skill.png" alt="">
                                     <div class="play">
                                         <a class="venobox" data-autoplay="true" data-vbtype="video" href="https://youtu.be/HOcrE_ztEq0"> <i class="fas fa-play-circle"></i></a>
                                     </div>
@@ -814,12 +881,12 @@
                         <div class="col-lg-10">
                             <div class="contact_inner">
                                 <div class="row">
-                                    <div class="col-lg-3">
+                                    <div class="col-md-4">
                                         <div class="contact_img">
-                                            <img src="images/contact.png" alt="">
+                                            <img id="contactImage" src="images/contact.png" alt="">
                                         </div>
                                     </div>
-                                    <div class="col-lg-9">
+                                    <div class="col-md-8">
                                         <h3>Say Hello <span>:)</span></h3>
                                         <div class="row">
                                             <div class="col-12 col-lg-12">
