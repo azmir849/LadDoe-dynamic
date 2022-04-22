@@ -477,6 +477,23 @@ myphotosRender = (profile_images) => {
   document.getElementById("myPhotos").innerHTML = htmlText;
 };
 
+//function to set microsite verified card
+// verifiedCardRender = (microsites_verified_card) => {
+//   let htmlText = "";
+//   microsites_verified_card.map((verifiedCardData)=>{
+//       htmlText += `
+//       <div class="col-md-4 microBatchImg">
+//       <img src="https://icircles.app/uploads/user/${username}/${verifiedCardData.image}" class="p-3" alt="">
+//   </div>
+//   <div class="col-md-8 p-3 microCardFooter">
+//     <h5 class="text-center">${verifiedCardData.name}</h5>
+//       <p class="text-center"><strong>${verifiedCardData.designation}</strong></p>
+//   </div>
+//       `
+//   });
+//   document.getElementById("verifiedCard").innerHTML = htmlText;
+// };
+
 
 //function to set the whole ui
 render = (data) => {
@@ -494,6 +511,7 @@ render = (data) => {
   profileVideoRender(data.profile_video);
   micrositesRender(data.microsites);
   myphotosRender(data.profile_images);
+  verifiedCardRender(data.microsites_verified_card);
 };
 
 //Fetch api
