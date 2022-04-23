@@ -230,7 +230,7 @@ languageRender = (languages) => {
   languages.map((languages) => {
     if (languages.level == "Advanced") {
       htmlText += `
-           
+      <div class="col-lg-1 appearOnSmall"></div>
             <div class="col-6 col-md-4 col-lg-2" >
                 <div class="circle">
                     <div class="text">
@@ -245,12 +245,12 @@ languageRender = (languages) => {
                     <h4>${languages.title}</h4>
                 </div>
             </div>
-            
+           
             `;
     }
     if (languages.level == "Intermediate") {
       htmlText += `
-            
+      <div class="col-lg-1 appearOnSmall"></div>
             <div class="col-6 col-md-4 col-lg-2">
                         <div class="circle">
                             <div class="text">
@@ -264,11 +264,13 @@ languageRender = (languages) => {
                         <div class="cercle_title text-center">
                             <h4>${languages.title}</h4>
                         </div>
-            </div>`;
+            </div>
+        
+            `;
     }
     if (languages.level == "Beginner") {
       htmlText += `
-         
+      <div class="col-lg-1 appearOnSmall"></div>
             <div class="col-6 col-md-4 col-lg-2">
                         <div class="circle">
                             <div class="text">
@@ -282,7 +284,9 @@ languageRender = (languages) => {
                         <div class="cercle_title text-center">
                             <h4>${languages.title}</h4>
                         </div>
-            </div>`;
+            </div>
+            
+            `;
     }
   });
   document.getElementById("languageDiv").innerHTML = htmlText;

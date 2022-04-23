@@ -1307,7 +1307,11 @@ p {
   position: relative;
   z-index: 1;
 }
-
+@media screen and (max-width: 767px) and (min-width: 280px) {
+  .appearOnSmall {
+    display: none !important;
+  }
+}
 .language::before {
   position: absolute;
   content: '';
