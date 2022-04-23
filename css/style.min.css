@@ -857,41 +857,95 @@ p {
  
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 575px)  and (min-width: 280px) {
   .microBatchCard{
    margin: 10px;
    width: fit-content;
    height: fit-content;
   }
 }
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 575px) and (min-width: 280px) {
   .microCardFooter{
    position: relative;
   }
 }
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 575px) and (min-width: 280px) {
   .microCardFooter h5{
    margin-top: -30px;
    margin-left: 50px;
   }
 }
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 575px) and (min-width: 280px) {
   .microCardFooter h6{
    margin-left: 50px;
   }
 }
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 575px) and (min-width: 280px) {
   .topRightCheck{
    margin-top: -60px;
   }
 }
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 575px) and (min-width: 280px) {
   .microBatchImg img {
     margin-top: 10px;
     width: 25% !important;
   }
 }
-@media screen and (max-width: 360px) {
+
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  .microBatchCard {
+    margin-top: 20px;
+   
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  .microBatchImg {
+    padding: 0px !important;
+   width: 30% !important;
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  .microBatchImg img {
+    margin-top: 40px !important;
+    padding: 0px !important;
+   width: 100% !important;
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  .microCardFooter h5{
+    font-size: 16px !important;
+    text-align:center !important;
+  }
+}
+
+@media screen and (max-width: 991.87px) and (min-width: 768px) {
+  .microBatchImg {
+    padding: 0px !important;
+   width: 30% !important;
+  }
+}
+@media screen and (max-width: 991.87px) and (min-width: 768px) {
+  .microBatchImg img {
+    margin-top: 30px !important;
+    padding: 0px !important;
+   width: 100% !important;
+  }
+}
+@media screen and (max-width: 991.87px) and (min-width: 768px) {
+  .microBatchCard {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 991.87px) and (min-width: 768px) {
+  .microCardFooter h5{
+    font-size: 16px !important;
+    text-align:center !important;
+  }
+}
+
+
+
+/* @media screen and (max-width: 360px) {
   .topRightCheck{
    margin-top: -50px;
   }
@@ -914,23 +968,7 @@ p {
   }
 }
 
-@media screen and (max-width: 767px) and (min-width: 576px) {
-  .microBatchCard {
-    margin-top: 20px;
-   width: fit-content;
-   height: fit-content;
-  }
-}
-@media screen and (max-width: 767px) and (min-width: 576px) {
-  .microCardFooter h5{
-   margin-left: 60px;
-  }
-}
-@media screen and (max-width: 767px) and (min-width: 576px) {
-  .microCardFooter h6{
-   margin-left: 60px;
-  }
-}
+ */
 
 /* *****************Interests section start*************** */
 .interest-container {
