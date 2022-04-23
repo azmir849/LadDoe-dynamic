@@ -737,9 +737,8 @@ p {
 }
 
 .about .about_wrap .about_contenet h5 {
-  font-size: 24px;
-  font-weight: 700;
-  color: #a459de;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .about .about_wrap .about_contenet h3 {
@@ -848,10 +847,12 @@ p {
   background-color: #fff;
   border-radius: 50%;
   border: 2px solid rgba(221, 167, 4, 0.748);
-  display: inline-block;
+  /* display: inline-block; */
+  display: inline-flex;
 }
 .dotBatch i{
-    margin-right: 3px;
+  margin-top: 3px;
+    margin-left: 3px;
     color: rgba(221, 167, 4, 0.748);
  
 }
