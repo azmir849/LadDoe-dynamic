@@ -74,6 +74,7 @@ aboutRender = (about) => {
     `;
 
     document.getElementById("headerLeft").innerHTML = `<h2 class="bold">${about.firstname} <span>${about.lastname}</span></h2>`;
+    document.getElementById("userNameTitle").innerHTML = `${about.firstname} ${about.lastname} - Portfolio`;
     document.getElementById("rightCanvasToggle").innerHTML = `<h2>${about.firstname} <span>${about.lastname}</span></h2>`;
     document.getElementById("headVideoThumb").innerHTML = `<img  src="${base_url + about.image}" alt="">`;
 };
@@ -229,8 +230,8 @@ languageRender = (languages) => {
   languages.map((languages) => {
     if (languages.level == "Advanced") {
       htmlText += `
-            <div class="col-lg-1"></div>
-            <div class="col-6 col-md-6 col-lg-2" >
+           
+            <div class="col-6 col-md-4 col-lg-2" >
                 <div class="circle">
                     <div class="text">
                         100%
@@ -243,11 +244,13 @@ languageRender = (languages) => {
                 <div class="cercle_title text-center">
                     <h4>${languages.title}</h4>
                 </div>
-            </div>`;
+            </div>
+            
+            `;
     }
     if (languages.level == "Intermediate") {
       htmlText += `
-            <div class="col-lg-1"></div>
+            
             <div class="col-6 col-md-4 col-lg-2">
                         <div class="circle">
                             <div class="text">
@@ -265,7 +268,7 @@ languageRender = (languages) => {
     }
     if (languages.level == "Beginner") {
       htmlText += `
-            <div class="col-lg-1"></div>
+         
             <div class="col-6 col-md-4 col-lg-2">
                         <div class="circle">
                             <div class="text">
@@ -395,7 +398,7 @@ portfolioRender = (portfolios) => {
       //  console.log(arr);
       if (index === 0) {
         contentIndex0 += `
-         <div class="portfolio_item mix ${item.cat_name} ${cnt>1?'mt-5':''}">
+         <div class="portfolio_item mix ${item.cat_name} ${cnt>1?'mt-5':''} mb-5">
          <img src="${base_url + "/" + item.image}" alt="">
             <div class="portfolio_overly">
             <span><i class="fa-solid fa-camera"></i></span>
@@ -406,7 +409,7 @@ portfolioRender = (portfolios) => {
       }
       if (index === 1 && ((cnt % 2) === 1)) {
         contentIndex1 += `
-            <div class="portfolio_item mix ${item.cat_name}">
+            <div class="portfolio_item mix ${item.cat_name}} mb-5">
                 <img src="${base_url + "/" + item.image}" alt="">
                 <div class="portfolio_overly">
                     <span><i class="fa-solid fa-camera"></i></span>
@@ -478,22 +481,41 @@ myphotosRender = (profile_images) => {
 };
 
 //function to set microsite verified card
-// verifiedCardRender = (microsites_verified_card) => {
-//   let htmlText = "";
-//   microsites_verified_card.map((verifiedCardData)=>{
-//       htmlText += `
-//       <div class="col-md-4 microBatchImg">
-//       <img src="https://icircles.app/uploads/user/${username}/${verifiedCardData.image}" class="p-3" alt="">
-//   </div>
-//   <div class="col-md-8 p-3 microCardFooter">
-//     <h5 class="text-center">${verifiedCardData.name}</h5>
-//       <p class="text-center"><strong>${verifiedCardData.designation}</strong></p>
-//   </div>
-//       `
-//   });
-//   document.getElementById("verifiedCard").innerHTML = htmlText;
-// };
+verifiedCardRender = (microsites_verified_card) => {
+  let htmlText = "";
+  microsites_verified_card.map((verifiedCardData)=>{
+      htmlText += `
+      <div class="col-md-4 microBatchImg">
+      <img src="https://icircles.app/uploads/micrositeslogo/${verifiedCardData.entity_logo}" class="p-3" alt="">
+  </div>
+  <div class="col-md-8 col-sm-8 microCardFooter">
+  <div class="topRightCheck" style="text-align:right ">
+      <span class="dotBatch"><i class="fa-solid fa-check text-center"></i></span>
+    </div>
+<h5 class="text-center">${verifiedCardData.name}</h5>
+  <h6 class="text-center">${verifiedCardData.designation}</h6>
+</div>
+      `
+  });
+  document.getElementById("verifiedCard").innerHTML = htmlText;
+};
 
+//function to set clients
+clientRender = (clients) => {
+  let htmlText = "";
+  clients.map((clientData)=>{
+     if(clientData.image){
+      htmlText += `
+      <div class="col-md-6  col-lg-3">
+      <div class="partner_item">
+          <img src="https://icircles.app/uploads/user/${username}/${clientData.image}" alt="">
+      </div>
+  </div>
+      `
+     }
+  });
+  document.getElementById("clients").innerHTML = htmlText;
+};
 
 //function to set the whole ui
 render = (data) => {
@@ -512,6 +534,7 @@ render = (data) => {
   micrositesRender(data.microsites);
   myphotosRender(data.profile_images);
   verifiedCardRender(data.microsites_verified_card);
+  clientRender(data.clients);
 };
 
 //Fetch api

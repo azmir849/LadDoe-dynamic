@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lana Doe - Portfolio</title>
+    <title id="userNameTitle">Lana Doe - Portfolio</title>
     <link rel="shortcut icon" href="images/logo.png" type="image/png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
@@ -22,6 +22,9 @@
 </head>
 
 <body>
+    <style>
+        
+        </style>
 
     <!--          Header Part strat
      *****************************************-->
@@ -232,7 +235,8 @@
         <div class="about" id="about">
             <div class="container">
                 <div class="about_wrap">
-                    <div class="row">
+                    
+                    <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4">
                         <div class="col-md-4 col-lg-4">
                             <div class="about_thumb wow slideInLeft" data-wow-duration="1.5s" data-wow-delay=".1s">
                                 <img id="thumb" src="" alt="">
@@ -246,28 +250,30 @@
                                 <p id="aboutDescription"></p>
                                 <ul id="user_details">
                                 </ul>
-                                <div class="d-flex flex-row bd-highlight mb-3">
-                                    <div class="p-2 bd-highlight">
-                                        <a id="ResumeUrl" href="#">Download Resume</a>
+                                <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-12 row-cols-lg-4">
+                                    <div class="col-md-4">
+                                        <a  id="ResumeUrl" href="#">Download Resume</a>
                                     </div>
-                                    <div class="p-2 bd-highlight">
-                                        <div class="card microBatchCard">
-                                            <div class="row g-0" id="verifiedCard">
-                                                <div class="col-md-4 microBatchImg">
-                                                    <img src="./images/iCirclelogo.png" class="p-3" alt="">
-                                                </div>
-                                                <div class="col-md-8 p-3 microCardFooter">
-                                                  <h5 class="text-center">micrositesData.name</h5>
-                                                    <p class="text-center"><strong>micrositesData.entity_details</strong></p>
-                                                </div>
+                                    <div class="col-md-8">
+                                       <div class="row shadow microBatchCard" id="verifiedCard">
+                                            <div class="col-md-4  microBatchImg">
+                                                <img src="./images/iCirclelogo.png" class="" alt="">
                                             </div>
-
-                                          </div>
+                                            <div class="col-md-8 col-sm-8 microCardFooter">
+                                                <div class="topRightCheck" style="text-align:right ">
+                                                    <span class="dotBatch"><i class="fa-solid fa-check text-center"></i></span>
+                                                  </div>
+                                              <h5 class="text-center">Data.name</h5>
+                                                <h6 class="text-center">entity_details</h6>
+                                            </div>
+                                       </div>
                                     </div>
-                                  </div>
+                                </div>
+                                  
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -839,27 +845,15 @@
     <section>
         <div class="partner" id="partner">
             <div class="container">
-                <div class="row">
+                <!-- <h2 class="text-center">Clients</h2> -->
+                <div class="row" id="clients">
+                    
                     <div class="col-md-6  col-lg-3">
                         <div class="partner_item">
                             <img src="images/partner1.png" alt="">
                         </div>
                     </div>
-                    <div class="col-md-6  col-lg-3 text-center">
-                        <div class="partner_item">
-                            <img src="images/partner2.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 text-center">
-                        <div class="partner_item">
-                            <img src="images/partner3.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-6  col-lg-3 text-end">
-                        <div class="partner_item">
-                            <img src="images/partner1.png" alt="">
-                        </div>
-                    </div>
+                 
                 </div>
             </div>
         </div>

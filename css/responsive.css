@@ -1,13 +1,13 @@
 @media (min-width: 320px) and (max-width: 479.98px){  
 /* Home part Start */
 .banner .banner_wrapper .banner_thumb::before {
-	display: none;
+	
 }
 .banner .banner_wrapper .banner_thumb::after {
-	display: none;
+	
 }
 .banner::after {
-	display: none;
+	
 }
 .header {
 	padding: 25px 0;

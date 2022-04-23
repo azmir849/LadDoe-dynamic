@@ -265,6 +265,38 @@ p {
 .rightCanvasToggle h2 span{
   color: #a459de;
 }
+@media screen and (max-width: 610px) {
+  .header .header_wrapper .header_right {
+    margin-right: 50px;
+  }
+}
+
+@media screen and (min-width: 280px) {
+  .banner .banner_wrapper .banner_content h4 {
+    font-size: 40px !important;
+  }
+}
+
+/* If screen size is 600px wide, or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 360px) {
+  .banner .banner_wrapper .banner_content h4 {
+    font-size: 40px !important;
+  }
+}
+
+
+@media screen and (min-width: 280px) {
+  .banner .banner_wrapper .banner_content h4 span {
+    font-size: 40px !important;
+  }
+}
+
+/* If screen size is 600px wide, or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 360px) {
+  .banner .banner_wrapper .banner_content h4 span {
+    font-size: 40px;
+  }
+}
 
 
 .header .header_wrapper .header_right a {
@@ -774,10 +806,13 @@ p {
   display: block;
 }
 .microBatchCard {
-  border: 5px solid rgba(255, 191, 0, 0.748);
+  padding: 5px;
+  border: 1px solid rgba(221, 167, 4, 0.748);
   border-radius: 0.5rem
 }
+
 .microCardFooter h5{
+  /* margin-top: 15px; */
   color: rgba(241, 184, 13, 0.989) !important;
 }
 .microCardFooter p{
@@ -793,6 +828,95 @@ p {
   border-width: 10px !important;
   height: 100% !important;
   width: 100% !important;
+}
+
+.dotBatch {
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid rgba(221, 167, 4, 0.748);
+  display: inline-block;
+}
+.dotBatch i{
+    margin-right: 3px;
+    color: rgba(221, 167, 4, 0.748);
+ 
+}
+
+@media screen and (max-width: 575px) {
+  .microBatchCard{
+   margin: 10px;
+   width: fit-content;
+   height: fit-content;
+  }
+}
+@media screen and (max-width: 575px) {
+  .microCardFooter{
+   position: relative;
+  }
+}
+@media screen and (max-width: 575px) {
+  .microCardFooter h5{
+   margin-top: -30px;
+   margin-left: 50px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .microCardFooter h6{
+   margin-left: 50px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .topRightCheck{
+   margin-top: -60px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .microBatchImg img {
+    margin-top: 10px;
+    width: 25% !important;
+  }
+}
+@media screen and (max-width: 360px) {
+  .topRightCheck{
+   margin-top: -50px;
+  }
+}
+@media screen and (max-width: 412px) {
+  .topRightCheck{
+   margin-top: -50px;
+  }
+}
+@media screen and (max-width: 412px) {
+  .microBatchImg img {
+    width: 30% !important;
+   margin-top: 10px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .microBatchImg img {
+    width: 30% !important;
+   margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  .microBatchCard {
+    margin-top: 20px;
+   width: fit-content;
+   height: fit-content;
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  .microCardFooter h5{
+   margin-left: 60px;
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  .microCardFooter h6{
+   margin-left: 60px;
+  }
 }
 
 /* *****************Interests section start*************** */
