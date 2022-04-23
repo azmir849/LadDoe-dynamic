@@ -765,6 +765,12 @@ p {
   font-family: 'Roboto', sans-serif;
   color: #333333;
 }
+@media (min-width: 767px) and (max-width: 1199.98px){
+  .about_contenet ul {
+    display:block !important;
+}
+}
+
 
 .about .about_wrap .about_contenet ul li span {
   padding-right: 10px;
