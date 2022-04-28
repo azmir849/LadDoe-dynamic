@@ -84,10 +84,20 @@ profileVideoRender = (portfolioVideo) =>{
   let htmlText = "";
   portfolioVideo.map((videoData)=>{
       htmlText += `
-      <a class="venobox" data-autoplay="true" data-vbtype="video" href="${videoData.video}"> <i class="fas fa-play-circle"></i></a>
+      <a class="venobox" data-autoplay="true" data-vbtype="video" href="https://icircles.app/uploads/user/${username}/${videoData.video}"> <i class="fas fa-play-circle"></i></a>
       `
   });
   document.getElementById("headerVideo").innerHTML = htmlText;
+};
+//function to set skill video
+skillVideoRender = (portfolioVideo) =>{
+  let htmlText = "";
+  portfolioVideo.map((videoData)=>{
+      htmlText += `
+      <a class="venobox" data-autoplay="true" data-vbtype="video" href="https://icircles.app/uploads/user/${username}/${videoData.video}"> <i class="fas fa-play-circle"></i></a>
+      `
+  });
+  document.getElementById("skillVideo").innerHTML = htmlText;
 };
 
 // function to set user educations information
@@ -444,7 +454,7 @@ portfolioRender = (portfolios) => {
   document.getElementById("index2").innerHTML = contentIndex2;
   document.getElementById("portfolioCategory").innerHTML = cat;
 //   document.getElementById("portfolio_content").innerHTML = content;
-  mixitup(".portfolio_content");
+  var mixer= mixitup(".portfolio_content");
 };
 
 //function to set microsites
@@ -469,25 +479,14 @@ micrositesRender = (microsites) => {
   document.getElementById("microsites").innerHTML = htmlText;
 };
 
-//function to set profile photos
-myphotosRender = (profile_images) => {
-  let htmlText = "";
-  profile_images.map((portfolioData)=>{
-      htmlText += `
-      <div class="col mb-3">
-      <div class="interest-card interest-cardh-50 shadow-sm"> 
-        <img src="https://icircles.app/uploads/user/${username}/${portfolioData.image}" class="card-img-top" alt="...">
-      </div>
-  </div>
-      `
-  });
-  document.getElementById("myPhotos").innerHTML = htmlText;
-};
 
 //function to set microsite verified card
 verifiedCardRender = (microsites_verified_card) => {
   let htmlText = "";
   microsites_verified_card.map((verifiedCardData)=>{
+    if(typeof verifiedCardData !== 'undefined' && verifiedCardData.length === 0){
+     document.getElementById("verifiedCard").style.display = "none";
+    }else{
       htmlText += `
       <div class="col-md-4 microBatchImg">
       <img src="https://icircles.app/uploads/micrositeslogo/${verifiedCardData.entity_logo}" class="p-3" alt="">
@@ -500,6 +499,7 @@ verifiedCardRender = (microsites_verified_card) => {
   <h6 class="text-center">${verifiedCardData.designation}</h6>
 </div>
       `
+    }
   });
   document.getElementById("verifiedCard").innerHTML = htmlText;
 };
@@ -521,29 +521,47 @@ clientRender = (clients) => {
   document.getElementById("clients").innerHTML = htmlText;
 };
 
+//function to set profile photos
+myphotosRender = (profile_images) => {
+  let htmlText = "";
+  profile_images.map((portfolioData)=>{
+      htmlText += `
+      <div class="col mb-3">
+      <div class="interest-card interest-cardh-50 shadow-sm"> 
+        <img src="https://icircles.app/uploads/user/${username}/${portfolioData.image}" class="card-img-top" alt="...">
+      </div>
+  </div>
+      `
+  });
+  document.getElementById("myPhotos").innerHTML = htmlText;
+  //alert(document.getElementById("myPhotos"));
+};
+
 //function to set the whole ui
 render = (data) => {
   aboutRender(data.about);
+  profileVideoRender(data.profile_video);
+  verifiedCardRender(data.microsites_verified_card);
+  myphotosRender(data.profile_images);
+  micrositesRender(data.microsites);
   educationsRender(data.educations);
   workExperienceRender(data.experiences);
-  interestRender(data.interests);
-  testimonialRender(data.testimonials);
   skillRender(data.subskills);
+  skillVideoRender(data.profile_video);
   languageRender(data.languages);
   serviceRender(data.services);
+  portfolioRender(data.portfolios);
+  interestRender(data.interests);
   blogRender(data.blogs);
   awardRender(data.awards);
-  portfolioRender(data.portfolios);
-  profileVideoRender(data.profile_video);
-  micrositesRender(data.microsites);
-  myphotosRender(data.profile_images);
-  verifiedCardRender(data.microsites_verified_card);
+  testimonialRender(data.testimonials);
   clientRender(data.clients);
+
 };
 
 //Fetch api
 
-fetch("http://icircles.app/api/profile/usermicrosite/testaccount")
+fetch("http://icircles.app/api/profile/usermicrosite/jewel")
   .then((responsse) => responsse.json())
   .then((data) => {
     console.log(data);

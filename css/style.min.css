@@ -819,7 +819,7 @@ p {
 .microBatchCard {
   padding: 5px;
   border: 1px solid rgba(221, 167, 4, 0.748);
-  border-radius: 0.5rem
+  border-radius: 0.5rem;
 }
 
 .microCardFooter h5{
@@ -937,7 +937,7 @@ p {
 .interest-container {
   margin-top: 50px;
   background-color: #fff3fc;
-  height: 550px;
+  height: fit-content;
   }
   @media screen and (max-width: 992px) {
     .interest-container {
